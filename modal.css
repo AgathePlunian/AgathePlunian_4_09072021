@@ -68,6 +68,26 @@ img {
   display: none;
 }
 
+/* VALIDATED FORM */
+
+.formular-validated {
+  display: none;
+  font-size: 1.2em;
+  height: 620px;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 15px 15%;
+  margin-bottom: 1em;
+}
+
+.btn-close {
+  position: absolute;
+  bottom: 0;
+}
+
 @media screen and (max-width: 768px) {
   .topnav a {display: none;}
   .topnav a.icon {
@@ -90,14 +110,12 @@ img {
   }
 }
 
-
-
  @media screen and (max-width: 540px) {
   .topnav a {display: none;}
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
+    margin-top: 0px;
   }
 } 
 
@@ -215,9 +233,9 @@ input {
   display: block;
   margin-top: 7px;
   margin-bottom: 7px;
-  text-align: right;
+  text-align: left;
   line-height: 0.3;
-  opacity: 0;
+  opacity: 1;
   transition: 0.3s;
 }
 .formData[data-error-visible="true"]::after {
@@ -232,6 +250,7 @@ input[data-error]::after {
     font-size: 0.4em;
     color: red;
 } */
+
 .checkbox-label,
 .checkbox2-label {
   position: relative;
@@ -321,8 +340,13 @@ input[data-error]::after {
 .close:after {
   transform: rotate(-45deg);
 }
+
+.margin-bottom {
+  margin-bottom: 1.5em;
+}
+
 .btn-submit,
-.btn-signup {
+.btn-signup, .btn-close {
   background: #fe142f;
   display: block;
   margin: 0 auto;
@@ -478,6 +502,8 @@ footer {
   padding-right: 2vw;
   margin: 0 20px;
 }
+
+
 @media screen and (max-width: 800px) {
   .hero-section {
     display: block;

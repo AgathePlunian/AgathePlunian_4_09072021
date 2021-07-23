@@ -57,14 +57,16 @@
           <span class="close"></span>
           <div class="modal-body">
             <form
+              id = "form"
+              novalidate
               name="reserve"
               action="index.html"
               method="get"
-              onsubmit="return validate();"
+              onsubmit="return validate(event);"
             >
               <div
-                class="formData">
-                <label>Prénom</label><br>
+                class="formData ">
+                <label for="first" id="label-first" >Prénom</label><br>
                 <input
                   class="text-control"
                   type="text"
@@ -73,9 +75,10 @@
                   minlength="2"
                 /><br>
               </div>
+
               <div
                 class="formData">
-                <label>Nom</label><br>
+                <label for="last" id="label-last">Nom</label><br>
                 <input
                   class="text-control"
                   type="text"
@@ -83,9 +86,10 @@
                   name="last"
                 /><br>
               </div>
+
               <div
                 class="formData">
-                <label>E-mail</label><br>
+                <label for="email" id="label-email">E-mail</label><br>
                 <input
                   class="text-control"
                   type="email"
@@ -93,9 +97,9 @@
                   name="email"
                 /><br>
               </div>
-              <div
-                class="formData">
-                <label>Date de naissance</label><br>
+
+              <div class="formData">
+                <label for="birthdate" id="label-birthdate">Date de naissance</label><br>
                 <input
                   class="text-control"
                   type="date"
@@ -103,25 +107,26 @@
                   name="birthdate"
                 /><br>
               </div>
-              <div
-                class="formData">
-                <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
+
+              <div class="formData">
+                <label for="quantity" id="label-quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
-              </div>
-              <p class="text-label">Quelles villes ?</p>
-              <div
-                class="formData">
-                <input
-                  class="checkbox-input"
+              </div><br>
+
+              <label for="location" id="label-location" class="text-label">Quelles villes ?</label>
+            
+              <div class="formData">
+                <input class="checkbox-input"
                   type="radio"
                   id="location1"
                   name="location"
                   value="New York"
                 />
+
                 <label class="checkbox-label" for="location1">
                   <span class="checkbox-icon"></span>
-                  New York</label
-                >
+                  New York</label>
+
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -129,10 +134,12 @@
                   name="location"
                   value="San Francisco"
                 />
+
                 <label class="checkbox-label" for="location2">
                   <span class="checkbox-icon"></span>
                   San Francisco</label
                 >
+
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -140,10 +147,12 @@
                   name="location"
                   value="Seattle"
                 />
+
                 <label class="checkbox-label" for="location3">
                   <span class="checkbox-icon"></span>
                   Seattle</label
                 >
+
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -177,21 +186,21 @@
                   <span class="checkbox-icon"></span>
                   Portland</label
                 >
-              </div>
+              </div><br>
 
               <div
-                class="formData">
+                class="formData margin-bottom" >
                 <input
                   class="checkbox-input"
                   type="checkbox"
                   id="checkbox1"
-                  checked
+                  
                 />
                 <label class="checkbox2-label" for="checkbox1" required>
                   <span class="checkbox-icon"></span>
-                  J'ai lu et accepté les conditions d'utilisation.
-                </label>
-                <br>
+                  J'ai lu et accepté les conditions d'utilisation.<br>
+                </label><br>
+               
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
@@ -207,6 +216,10 @@
               />
             </form>
           </div>
+          <div class="formular-validated">
+            <p class="text-thanks">Thanks your for submitting your registration details</p>
+            <button class="btn-close">Close</button> 
+          </div>
         </div>
       </div>
     </main>
@@ -216,5 +229,6 @@
       </p>
     </footer>
     <script src="modal.js"></script>
+    <script src="verificationForm.js"></script>
   </body>
 </html>
